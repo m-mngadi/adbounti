@@ -56,13 +56,13 @@ const WhatWeCanDo = () => {
     <>
       <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-12 md:py-8 md:pb-6 md:pt-36 z-50">
         <div className="text-center text-pretty sm:text-balance text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] z-50 pb-18 mb-12 relative">
-          <div className="flex flex-wrap gap-2 justify-center">
-            <span className="flex relative">What can </span>
-            <span className="flex bg-gradient-to-r from-rose-500 to-orange-500 px-2 animate-bounce bg-clip-text text-transparent">
+          <div className="block md:flex flex-wrap gap-2 justify-center w-full">
+            <span className="block md:flex relative">What can </span>
+            <span className="block md:flex bg-gradient-to-r from-rose-500 to-orange-500 px-2 animate-bounce bg-clip-text text-transparent">
               <span className="ml-2">"Ad</span>
               <span className="text-black underline">bounti"</span>
             </span>
-            <span className="flex-grow relative"> do for you.</span>
+            <span className="block md:flex-grow relative"> do for you.</span>
           </div>
         </div>
         <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
