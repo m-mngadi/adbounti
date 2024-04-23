@@ -28,7 +28,7 @@ const WaitlistCTA = () => {
               <br />
               Successful applicant will be
               <span className="bg-gradient-to-r from-rose-500 to-orange-500 px-2 bg-clip-text text-transparent">
-                featured on our landing page for 3 months
+                featured on our landing page for the first 3 months
               </span>
               post public launch.
             </span>

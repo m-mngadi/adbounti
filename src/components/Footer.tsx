@@ -12,6 +12,7 @@ const Footer = () => {
         <Link
           className="flex hover:bg-gradient-to-r hover:from-rose-500 hover:to-orange-500 hover:text-white px-4 py-2 rounded-lg"
           href="mailto:info@adbounti.com"
+          target="_blank"
         >
           <IconMail />
           <span className="ml-2 hidden md:inline">info@adbounti.com</span>
