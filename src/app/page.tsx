@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Waitlist from "@/components/Waitlist";
 import WhatWeCanDo from "@/components/WhatWeCanDo";
+import WaitlistCTA from "@/components/WaitlistCTA";
+import Footer from "@/components/Footer";
 
 export default function LandingPage() {
   return (
@@ -11,12 +12,17 @@ export default function LandingPage() {
       <main className="flex justify-center">
         <div className="relative container px-4">
           <div className="snap-mandatory snap-y">
-            <div className="snap-start">
+            <div className="snap-start pb-36">
               <Hero />
-              <Waitlist />
+            </div>
+            <div className="snap-start pb-36">
+              <WhatWeCanDo />
+            </div>
+            <div className="snap-start pb-36">
+              <WaitlistCTA />
             </div>
             <div className="snap-start">
-              <WhatWeCanDo />
+              <Footer />
             </div>
           </div>
         </div>

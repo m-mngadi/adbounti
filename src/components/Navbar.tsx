@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="flex container max-w-screen-2xl h-14 items-center px-4 sm:px-8">
         <div className="flex">
           <Link
-            className="flex items-center space-x-2 hover:bg-slate-200/30 px-4 py-2 rounded-lg bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent"
+            className="flex items-center space-x-2 hover:bg-gray-200/30 px-4 py-2 rounded-lg"
             href="/"
           >
             <div className="flex font-bold tracking-wide text-2xl gap-2">

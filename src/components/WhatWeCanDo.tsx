@@ -58,9 +58,8 @@ const WhatWeCanDo = () => {
         <div className="text-center text-pretty sm:text-balance text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1] z-50 pb-18 mb-12 relative">
           <div className="block md:flex flex-wrap gap-2 justify-center w-full">
             <span className="block md:flex relative">What can </span>
-            <span className="block md:flex bg-gradient-to-r from-rose-500 to-orange-500 px-2 animate-bounce bg-clip-text text-transparent">
-              <span className="ml-2">"Ad</span>
-              <span className="text-black underline">bounti"</span>
+            <span className="block md:flex bg-gradient-to-r from-rose-500 to-orange-500 px-2 bg-clip-text text-transparent">
+              adbounti
             </span>
             <span className="block md:flex-grow relative"> do for you.</span>
           </div>

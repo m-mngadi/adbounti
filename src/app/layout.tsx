@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adbounti",
+  title: "Adbounti | Cost-effective alternative to paid ads",
   description: "Cost-effective alternative to paid ads",
 };
 
