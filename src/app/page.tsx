@@ -18,7 +18,7 @@ export default function LandingPage() {
             <div className="snap-start pb-36">
               <WhatWeCanDo />
             </div>
-            <div className="snap-start pb-36">
+            <div className="snap-start pb-36 border-b">
               <WaitlistCTA />
             </div>
             <div className="snap-start">
