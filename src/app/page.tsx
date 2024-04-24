@@ -11,19 +11,17 @@ export default function LandingPage() {
       <Navbar />
       <main className="flex justify-center">
         <div className="relative container px-4">
-          <div className="snap-mandatory snap-y">
-            <div className="snap-start pb-36">
+          <div className="flex flex-col">
+            <div className="pb-36">
               <Hero />
             </div>
-            <div className="snap-start pb-36">
+            <div className="pb-18 md:pb-36 mt-4">
               <WhatWeCanDo />
             </div>
-            <div className="snap-start pb-36 border-b">
+            <div className="pb-36 border-b">
               <WaitlistCTA />
             </div>
-            <div className="snap-start">
-              <Footer />
-            </div>
+            <Footer />
           </div>
         </div>
       </main>

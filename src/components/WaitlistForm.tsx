@@ -32,7 +32,7 @@ const WaitlistForm = () => {
   return (
     <form
       action={formAction}
-      className="block w-full md:flex-row min-w-80 max-w-xl z-50"
+      className="block w-full md:flex-row min-w-80 max-w-xl"
     >
       <span className="block text-base font-bold text-slate-700 mb-2">
         Join our waitlist
