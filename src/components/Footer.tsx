@@ -11,11 +11,11 @@ const Footer = () => {
         </div>
         <Link
           className="flex hover:bg-slate-200/60 px-4 py-2 rounded-lg"
-          href="mailto:info@adbounti.com"
+          href="mailto:support@adbounti.com"
           target="_blank"
         >
           <IconMail />
-          <span className="ml-2 hidden md:inline">info@adbounti.com</span>
+          <span className="ml-2 hidden md:inline">support@adbounti.com</span>
         </Link>
       </div>
       <div className="flex items-center justify-center text-sm text-gray-400 py-4">

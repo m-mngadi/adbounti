@@ -17,11 +17,11 @@ const Navbar = () => {
           </Link>
           <Link
             className="flex hover:bg-slate-200/30 px-4 py-2 rounded-lg"
-            href="mailto:info@adbounti.com"
+            href="mailto:support@adbounti.com"
             target="_blank"
           >
             <IconMail />
-            <span className="ml-2 hidden md:inline">info@adbounti.com</span>
+            <span className="ml-2 hidden md:inline">support@adbounti.com</span>
           </Link>
           {/* 
             <nav className="flex items-center gap-4 lg:gap-6 text-sm"></nav> 
