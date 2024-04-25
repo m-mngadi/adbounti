@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cost-effective Alternative to Paid Ads | Adbounti",
-  description: `Adbounti is a cost-effective paid ads alternative catering primarily to startups and small businesses.`,
+  description: `Adbounti is a cost-effective paid ads alternative for startups.`,
   applicationName: "Adbounti",
   keywords: [
     "Adbounti",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Cost-effective Alternative to Paid Ads | Adbounti",
-    description: `Adbounti is a cost-effective paid ads alternative catering primarily to startups and small businesses.`,
+    title: "Cost-effective Paid Ads Alternative | Adbounti",
+    description: `Adbounti is a cost-effective paid ads alternative for startups.`,
     url: "https://adbounti.com",
     siteName: "Adbounti",
     locale: "en_US",
