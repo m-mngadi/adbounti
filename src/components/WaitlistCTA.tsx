@@ -57,7 +57,7 @@ const WaitlistCTA = (props: { userType: string }) => {
           </div>
         </div>
       </section>
-      <Waitlist />
+      <Waitlist userType={userType} />
     </>
   );
 };

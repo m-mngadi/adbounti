@@ -6,6 +6,10 @@ const WaitlistSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  userType: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.models.Waitlist ||

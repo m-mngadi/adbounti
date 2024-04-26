@@ -12,7 +12,8 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { ChangeEvent, useEffect, useState } from "react";
 
-const WaitlistForm = () => {
+const WaitlistForm = (props: { userType: string }) => {
+  const { userType } = props;
   const { toast } = useToast();
 
   const [formState, formAction] = useFormState(addToWaitlist, {
@@ -58,6 +59,14 @@ const WaitlistForm = () => {
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 setEmailAddress(e.target.value);
               }}
+            />
+            <input
+              type="text"
+              name="userType"
+              value={userType}
+              readOnly
+              hidden
+              disabled
             />
           </div>
           <div className="flex relative items-center justify-center min-w-44 mt-3 md:mt-0">

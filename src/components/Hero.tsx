@@ -24,7 +24,7 @@ const Hero = (props: { userType: string }) => {
             No montization restricts based on follow or view count.`}
         </span>
       </section>
-      <Waitlist />
+      <Waitlist userType={userType} />
     </>
   );
 };

@@ -17,6 +17,7 @@ export async function addToWaitlist(
   formData: FormData
 ) {
   const emailAddress = formData.get("emailAddress");
+  const userType = formData.get("userType");
 
   return await connect()
     .then(async () => {
@@ -32,7 +33,7 @@ export async function addToWaitlist(
           trigger: 1,
         };
       } else {
-        await Waitlist.create({ emailAddress });
+        await Waitlist.create({ emailAddress, userType });
         return {
           email: "",
           message: {
