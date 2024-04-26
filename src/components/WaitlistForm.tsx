@@ -66,7 +66,6 @@ const WaitlistForm = (props: { userType: string }) => {
               value={userType}
               readOnly
               hidden
-              disabled
             />
           </div>
           <div className="flex relative items-center justify-center min-w-44 mt-3 md:mt-0">
