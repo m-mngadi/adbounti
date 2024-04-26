@@ -20,8 +20,8 @@ const Hero = (props: { userType: string }) => {
             ? `Say goodbye to fluctuating paid ad campaign costs.
             Simply post a bounty and leave your organic marketing in the capable hands of content creators worldwide. 
             Simplicity itself.`
-            : `Get paid for your top performing content regardless of your size.
-            No montization restricts based on follow or view count.`}
+            : `Get paid for your top performing content when you participate in a bounty hosted on Adbounti.
+            No montization restricts, all are welcome.`}
         </span>
       </section>
       <Waitlist userType={userType} />
