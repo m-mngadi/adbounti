@@ -38,13 +38,21 @@ const WaitlistCTA = (props: { userType: string }) => {
             <span className=" text-gray-400 leading-normal tracking-wide">
               Be amongst the first that join our waitlist. <br />
               We will be considering{" "}
-              {userType === "business"
-                ? `15 businesses`
-                : `150 content creators`}{" "}
+              <span className="underline font-bold">
+                {userType === "business"
+                  ? `15 businesses`
+                  : `30 content creators`}{" "}
+              </span>
               to be apart of our beta release.
               <br />
-              Interested individuals can connect with us via email. <br /> We
-              look forward to partnering up with you.
+              Interested individuals can connect with us via email using <br />
+              <span className="underline font-bold">
+                {userType === "business"
+                  ? `Adbounti Beta: Interested Business`
+                  : `Adbounti Beta: Interested Creator`}
+              </span>{" "}
+              <br /> as the subject line. <br /> We look forward to partnering
+              up with you.
             </span>
           </div>
         </div>
