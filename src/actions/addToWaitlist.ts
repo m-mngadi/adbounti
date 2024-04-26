@@ -1,10 +1,19 @@
 "use server";
-
 import Waitlist from "@/models/Waitlist";
 import { dbConnect as connect } from "@/lib/db";
 
+export interface messageType {
+  title: string;
+  variant: "default" | "destructive" | "success" | null | undefined;
+  description: string;
+}
+
 export async function addToWaitlist(
-  prevState: void | { email: string; message: string },
+  prevState: void | {
+    email: string;
+    message: messageType;
+    trigger: Number;
+  },
   formData: FormData
 ) {
   const emailAddress = formData.get("emailAddress");
@@ -15,13 +24,23 @@ export async function addToWaitlist(
       if (query?.emailAddress) {
         return {
           email: "",
-          message: "You have already joined the waitlist.",
+          message: {
+            title: "",
+            variant: null,
+            description: "You have already joined the waitlist.",
+          },
+          trigger: 1,
         };
       } else {
         await Waitlist.create({ emailAddress });
         return {
           email: "",
-          message: "Added to the waitlist.",
+          message: {
+            title: "",
+            variant: null,
+            description: "Thank you, you have been added to the waitlist :)",
+          },
+          trigger: 1,
         };
       }
     })

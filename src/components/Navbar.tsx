@@ -12,7 +12,7 @@ const Navbar = () => {
             href="/"
           >
             <div className="flex font-bold tracking-wide text-2xl gap-2">
-              <Logo userType="business" />
+              <Logo />
             </div>
           </Link>
           <Link

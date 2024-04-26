@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
-import { addToWaitlist } from "@/actions/addToWaitlist";
+import { addToWaitlist, messageType } from "@/actions/addToWaitlist";
 import clsx from "clsx";
 import {
   Tooltip,
@@ -13,21 +13,28 @@ import { useToast } from "@/components/ui/use-toast";
 import { ChangeEvent, useEffect, useState } from "react";
 
 const WaitlistForm = () => {
+  const { toast } = useToast();
+
   const [formState, formAction] = useFormState(addToWaitlist, {
     email: "",
-    message: "",
+    message: {
+      title: "",
+      variant: null,
+      description: "",
+    },
+    trigger: 0,
   });
+
   const { pending } = useFormStatus();
   const [emailAddress, setEmailAddress] = useState(formState!.email);
 
-  const { toast } = useToast();
   useEffect(() => {
-    setEmailAddress(formState!.email);
-    toast({
-      title: "",
-      variant: "success",
-      description: formState!.message,
-    });
+    if (formState) {
+      setEmailAddress(formState!.email);
+      if (formState.trigger === 1) {
+        toast(formState.message);
+      }
+    }
   }, [formState]);
 
   return (
