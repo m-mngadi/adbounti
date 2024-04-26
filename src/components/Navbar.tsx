@@ -17,7 +17,7 @@ const Navbar = () => {
           </Link>
           <Link
             className="flex hover:bg-slate-200/30 px-4 py-2 rounded-lg"
-            href="mailto:support@adbounti.com"
+            href={`mailto:support@adbounti.com?subject=Adbounti Beta:Interested [Specify whether you are a Business/Creator]&body=Hi Adbounti Team,%0D%0A%0D%0AI would like to be a part of the beta release.%0D%0A%0D%0A[Your motivation for wanting to be a part of the beta release.]%0D%0A%0D%0A Kind regards,%0D%0A[Your Name]`}
             target="_blank"
           >
             <IconMail />

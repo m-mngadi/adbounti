@@ -1,4 +1,5 @@
 import Waitlist from "@/components/Waitlist";
+import Link from "next/link";
 
 const WaitlistCTA = (props: { userType: string }) => {
   const { userType } = props;
@@ -34,6 +35,7 @@ const WaitlistCTA = (props: { userType: string }) => {
               We will be launching a beta release. <br />
             </span>
           </div>
+          <br />
           <div className="block md:flex md:justify-center  text-center relative">
             <span className=" text-gray-400 leading-normal tracking-wide">
               Be amongst the first that join our waitlist. <br />
@@ -45,14 +47,18 @@ const WaitlistCTA = (props: { userType: string }) => {
               </span>
               to be apart of our beta release.
               <br />
-              Interested individuals can connect with us via email using <br />
-              <span className="underline font-bold">
-                {userType === "business"
-                  ? `Adbounti Beta: Interested Business`
-                  : `Adbounti Beta: Interested Creator`}
-              </span>{" "}
-              <br /> as the subject line. <br /> We look forward to partnering
-              up with you.
+              <br />
+              Interested individuals can connect with us via email on{" "}
+              <Link
+                className="inline bg-slate-200/30 rounded-lg"
+                href={`mailto:support@adbounti.com?subject=Adbounti Beta:Interested [Specify whether you are a Business/Creator]&body=Hi Adbounti Team,%0D%0A%0D%0AI would like to be a part of the beta release.%0D%0A%0D%0A[Your motivation for wanting to be a part of the beta release.]%0D%0A%0D%0A Kind regards,%0D%0A[Your Name]`}
+                target="_blank"
+              >
+                <span className="ml-2 inline font-bold">
+                  support@adbounti.com
+                </span>
+              </Link>{" "}
+              <br /> We look forward to partnering up with you.
             </span>
           </div>
         </div>
