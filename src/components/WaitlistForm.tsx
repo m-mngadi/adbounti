@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import { addToWaitlist } from "@/actions/addToWaitlist";
+import { addToWaitlist, messageType } from "@/actions/addToWaitlist";
 import clsx from "clsx";
 import {
   Tooltip,
@@ -20,7 +20,6 @@ const WaitlistForm = (props: { userType: string }) => {
     email: "",
     message: {
       title: "",
-      variant: null,
       description: "",
     },
     trigger: 0,
@@ -34,7 +33,7 @@ const WaitlistForm = (props: { userType: string }) => {
       setEmailAddress(formState!.email);
       if (formState.trigger === 1) {
         setPending(false);
-        toast(formState.message);
+        toast({ ...formState.message, ...{ variant: "success" } });
       }
     }
   }, [formState]);

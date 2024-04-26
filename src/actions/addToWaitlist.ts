@@ -4,7 +4,6 @@ import { dbConnect as connect } from "@/lib/db";
 
 export interface messageType {
   title: string;
-  variant: "default" | "destructive" | "success" | null | undefined;
   description: string;
 }
 
@@ -27,7 +26,6 @@ export async function addToWaitlist(
           email: "",
           message: {
             title: "",
-            variant: "destructive",
             description: "You have already joined the waitlist.",
           },
           trigger: 1,
@@ -38,7 +36,6 @@ export async function addToWaitlist(
           email: "",
           message: {
             title: "",
-            variant: "success",
             description: "Thank you, you have been added to the waitlist :)",
           },
           trigger: 1,
