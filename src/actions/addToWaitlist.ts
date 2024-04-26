@@ -27,7 +27,7 @@ export async function addToWaitlist(
           email: "",
           message: {
             title: "",
-            variant: null,
+            variant: "destructive",
             description: "You have already joined the waitlist.",
           },
           trigger: 1,
@@ -38,7 +38,7 @@ export async function addToWaitlist(
           email: "",
           message: {
             title: "",
-            variant: null,
+            variant: "success",
             description: "Thank you, you have been added to the waitlist :)",
           },
           trigger: 1,
