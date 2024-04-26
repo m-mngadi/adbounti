@@ -1,7 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
-import { addToWaitlist, messageType } from "@/actions/addToWaitlist";
+import { useFormState } from "react-dom";
+import { addToWaitlist } from "@/actions/addToWaitlist";
 import clsx from "clsx";
 import {
   Tooltip,
@@ -26,13 +26,14 @@ const WaitlistForm = (props: { userType: string }) => {
     trigger: 0,
   });
 
-  const { pending } = useFormStatus();
+  const [pending, setPending] = useState(false);
   const [emailAddress, setEmailAddress] = useState(formState!.email);
 
   useEffect(() => {
     if (formState) {
       setEmailAddress(formState!.email);
       if (formState.trigger === 1) {
+        setPending(false);
         toast(formState.message);
       }
     }
@@ -41,12 +42,15 @@ const WaitlistForm = (props: { userType: string }) => {
   return (
     <form
       action={formAction}
+      onSubmit={() => {
+        setPending(true);
+      }}
       className="block w-full md:flex-row min-w-80 max-w-xl"
     >
       <span className="block text-base font-bold text-slate-700 mb-2">
         Join our waitlist
       </span>
-      {pending === false ? (
+      {!pending ? (
         <div className="block md:flex w-full md:gap-4">
           <div className="flex-grow min-w-64">
             <input
