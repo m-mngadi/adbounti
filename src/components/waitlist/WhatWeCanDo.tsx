@@ -1,4 +1,4 @@
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {
   IconChartBar,
   IconClock24,

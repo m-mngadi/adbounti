@@ -1,14 +1,14 @@
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import WhatWeCanDo from "@/components/WhatWeCanDo";
-import WaitlistCTA from "@/components/WaitlistCTA";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/waitlist/Navbar";
+import Hero from "@/components/waitlist/Hero";
+import WhatWeCanDo from "@/components/waitlist/WhatWeCanDo";
+import WaitlistCTA from "@/components/waitlist/WaitlistCTA";
+import Footer from "@/components/waitlist/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function LandingPage() {
   return (
-    <main className="flex flex-col relative justify-center min-h-screen">
+    <>
       <Navbar />
       <div className="relative container px-4 mt-4 md:mt-12">
         <Tabs defaultValue="business">
@@ -50,6 +50,6 @@ export default function LandingPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </main>
+    </>
   );
 }

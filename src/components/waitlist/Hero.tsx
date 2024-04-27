@@ -1,4 +1,4 @@
-import Waitlist from "@/components/Waitlist";
+import Waitlist from "@/components/waitlist/Waitlist";
 
 const Hero = (props: { userType: string }) => {
   const { userType } = props;

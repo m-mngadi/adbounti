@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 

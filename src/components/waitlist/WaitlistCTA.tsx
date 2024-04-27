@@ -1,4 +1,4 @@
-import Waitlist from "@/components/Waitlist";
+import Waitlist from "@/components/waitlist/Waitlist";
 import Link from "next/link";
 
 const WaitlistCTA = (props: { userType: string }) => {
