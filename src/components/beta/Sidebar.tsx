@@ -36,7 +36,7 @@ const Sidebar = () => {
     {
       value: "settings",
       label: "Settings",
-      href: "/settings",
+      href: "/settings/accounts",
       icon: <IconSettings />,
     },
   ];
@@ -63,7 +63,8 @@ const Sidebar = () => {
                       `flex gap-3 px-4 py-2 hover:justify-normal justify-center`,
                       {
                         " text-white bg-gradient-to-r from-rose-500 to-orange-500":
-                          `/${pathname.split("/")[1]}` === item.href,
+                          `${pathname.split("/")[1]}` ===
+                          item.href.split("/")[1],
                       }
                     )}
                   >
