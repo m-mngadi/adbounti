@@ -11,81 +11,73 @@ import clsx from "clsx";
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "../waitlist/Logo";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
   const sidebarItems = [
     {
-      value: "0_DASHBOARD",
+      value: "dashboard",
       label: "Dashboard",
       href: "/dashboard",
       icon: <IconLayoutGrid />,
     },
     {
-      value: "1_EXPLORE",
+      value: "explore",
       label: "Explore",
       href: "/explore",
       icon: <IconCompass />,
     },
     {
-      value: "2_REWARDS",
+      value: "rewards",
       label: "Rewards",
       href: "/rewards",
       icon: <IconMoneybag />,
     },
     {
-      value: "3_SETTINGS",
+      value: "settings",
       label: "Settings",
       href: "/settings",
       icon: <IconSettings />,
     },
   ];
 
-  const [sidebarValue, setSidebarValue] = useState("0_DASHBOARD");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
-      <aside className="flex md:flex-col md:min-w-[96] bg-white">
-        <div className="flex flex-grow justify-between flex-col drop-shadow-lg relative left-0">
-          <div className="flex flex-col">
-            <Link href="/dashboard">
-              <div
-                className={clsx("flex px-4 py-6", {
-                  "md:justify-center": !sidebarOpen,
-                })}
-              >
-                {sidebarOpen ? <Logo /> : <Logo logoOnly={true} />}
-              </div>
+      <aside className="max-w-7xl w-full mx-auto">
+        <div className="flex flex-grow justify-between drop-shadow-lg relative py-2 mx-4">
+          <div className="flex items-center justify-between w-full">
+            <Link href="/dashboard" className="mr-2">
+              <Logo logoOnly={true} />
             </Link>
-            <ul className="flex md:flex-col justify-between px-4 gap-3">
+            <ul className="flex justify-between">
               {sidebarItems.map((item) => (
                 <Link
                   key={item.value}
                   href={item.href}
-                  className={`group/item`}
+                  className="hover:bg-slate-300/30"
                 >
                   <li
                     className={clsx(
-                      `flex gap-3 px-4 py-2 rounded-lg group-hover/item:justify-normal transition ease-in-out delay-150 duration-300 group-hover/item:bg-slate-200/30 justify-center`,
+                      `flex gap-3 px-4 py-2 hover:justify-normal justify-center`,
                       {
                         " text-white bg-gradient-to-r from-rose-500 to-orange-500":
-                          sidebarValue === item.value,
+                          `/${pathname.split("/")[1]}` === item.href,
                       }
                     )}
-                    onClick={() => {
-                      setSidebarValue(item.value);
-                    }}
                   >
                     {item.icon}
-                    <span
-                      className={`hidden transition ease-in-out delay-150 duration-300 group-hover/item:inline`}
-                    >
-                      {item.label}
-                    </span>
+                    <span className={`hidden md:inline`}>{item.label}</span>
                   </li>
                 </Link>
               ))}
             </ul>
+            <Link href="/settings/accounts">
+              <div className="flex relative h-8 w-8 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full text-white font-bold justify-center items-center">
+                P
+              </div>
+            </Link>
           </div>
         </div>
       </aside>
