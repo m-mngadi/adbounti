@@ -1,5 +1,5 @@
 import { Dropdown } from "@/components/beta/Dropdown";
-import Link from "next/link";
+import BountiCard from "@/components/beta/BountiCard";
 
 const sortByDirection = [
   {
@@ -20,6 +20,21 @@ const sortByItems = [
   {
     value: "participantCount",
     label: "Participant count",
+  },
+  {
+    value: "prizePool",
+    label: "Prize pool amount",
+  },
+];
+
+const bountiItems = [
+  {
+    id: "b_01",
+    title: "Bounti title",
+    host: "Adbounti",
+    status: "Active",
+    prizePool: 500,
+    participantCount: 10,
   },
 ];
 
@@ -57,20 +72,7 @@ const ExplorePage = () => {
             {/* Bounti Cards will be here */}
             <div className="max-w-7xl w-full h-full">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-content-stretch">
-                <Link href="/bounti/view">
-                  <div className="size-full h-48 bg-white rounded-lg"></div>
-                </Link>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-                <div className="size-full h-48 bg-white rounded-lg"></div>
+                <BountiCard items={bountiItems} />
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const BountiEntrySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    url: {
+    video_url: {
       type: String,
       required: true,
     },
@@ -24,6 +24,10 @@ export const BountiEntrySchema = new mongoose.Schema(
     },
     commentCount: {
       type: Number,
+      required: true,
+    },
+    uniqueCTA_url: {
+      type: String,
       required: true,
     },
     creatorId: {

@@ -9,10 +9,10 @@ import clsx from "clsx";
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "../waitlist/Logo";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-const Sidebar = () => {
-  const sidebarItems = [
+const Sidebar = ({ ...props }) => {
+  const creatorItems = [
     {
       value: "dashboard",
       label: "Dashboard",
@@ -34,13 +34,35 @@ const Sidebar = () => {
     {
       value: "settings",
       label: "Settings",
-      href: "/settings/accounts",
+      href: "/settings",
       icon: <IconSettings />,
     },
   ];
 
-  const [currNav, setCurrNav] = useState("dashboard");
-  const router = useRouter();
+  const businessItems = [
+    {
+      value: "dashboard",
+      label: "Dashboard",
+      href: "/dashboard",
+      icon: <IconLayoutGrid />,
+    },
+    {
+      value: "explore",
+      label: "Explore",
+      href: "/explore",
+      icon: <IconCompass />,
+    },
+    {
+      value: "settings",
+      label: "Settings",
+      href: "/settings",
+      icon: <IconSettings />,
+    },
+  ];
+
+  const { userType } = props;
+  const pathname = usePathname();
+  const [currNav, setCurrNav] = useState(pathname.split("/")[1]);
 
   return (
     <>
@@ -51,29 +73,31 @@ const Sidebar = () => {
               <Logo logoOnly={true} />
             </Link>
             <ul className="flex justify-between">
-              {sidebarItems.map((item) => (
-                <button
-                  key={item.value}
-                  className="hover:bg-slate-300/30"
-                  onClick={() => {
-                    router.push(item.href);
-                    setCurrNav(item.value);
-                  }}
-                >
-                  <li
-                    className={clsx(
-                      `flex gap-3 px-4 py-2 hover:justify-normal justify-center`,
-                      {
-                        " text-white bg-gradient-to-r from-rose-500 to-orange-500":
-                          currNav === item.value,
-                      }
-                    )}
+              {(userType === "business" ? businessItems : creatorItems).map(
+                (item) => (
+                  <Link
+                    key={item.value}
+                    className="hover:bg-slate-300/30"
+                    href={item.href}
+                    onClick={() => {
+                      setCurrNav(item.value);
+                    }}
                   >
-                    {item.icon}
-                    <span className={`hidden md:inline`}>{item.label}</span>
-                  </li>
-                </button>
-              ))}
+                    <li
+                      className={clsx(
+                        `flex gap-3 px-4 py-2 hover:justify-normal justify-center`,
+                        {
+                          " text-white bg-gradient-to-r from-rose-500 to-orange-500":
+                            currNav === item.value,
+                        }
+                      )}
+                    >
+                      {item.icon}
+                      <span className={`hidden md:inline`}>{item.label}</span>
+                    </li>
+                  </Link>
+                )
+              )}
             </ul>
             <div className="flex relative h-8 w-8 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full text-white font-bold justify-center items-center cursor-default">
               P

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Dropdown } from "@/components/beta/Dropdown";
 import { IconPlus } from "@tabler/icons-react";
+import BountiCard from "@/components/beta/BountiCard";
+import { constants } from "@/constants";
 
 const filterItems = [
   {
@@ -21,7 +23,20 @@ const filterItems = [
   },
 ];
 
+const bountiItems = [
+  {
+    id: "b_01",
+    title: "Bounti title",
+    host: "Adbounti",
+    status: "Active",
+    prizePool: 500,
+    participantCount: 10,
+  },
+];
+
 const DashboardPage = () => {
+  const userType: string = constants.userType;
+
   return (
     <>
       <div className="relative flex flex-grow rounded-lg drop-shadow-lg">
@@ -34,30 +49,21 @@ const DashboardPage = () => {
                 items={filterItems}
               />
             </div>
-            <Link
-              href="/bounti/create"
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm bg-gradient-to-r from-rose-500 to-orange-500 text-white hover:bg-gradient-to-r hover:from-rose-600 hover:to-orange-600"
-            >
-              <IconPlus />
-              New Bounti
-            </Link>
+            {userType === "business" && (
+              <div className="flex">
+                <Link
+                  href="/bounti/create"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm bg-gradient-to-r from-rose-500 to-orange-500 text-white hover:bg-gradient-to-r hover:from-rose-600 hover:to-orange-600"
+                >
+                  <IconPlus />
+                  New Bounti
+                </Link>
+              </div>
+            )}
           </header>
           <div className="max-w-7xl w-full h-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-content-stretch">
-              <Link href="/bounti/view">
-                <div className="size-full h-48 bg-white rounded-lg"></div>
-              </Link>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
-              <div className="size-full h-48 bg-white rounded-lg"></div>
+              <BountiCard items={bountiItems} />
             </div>
           </div>
         </div>

@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 import { BountiEntrySchema } from "./BountiEntry";
-import { CreatorRewardSchema } from "./CreatorReward";
+import { CreatorBountiParticipationSchema } from "./CreatorBountiParticipation";
 
 const ContentCreatorSchema = new mongoose.Schema(
   {
     entries: [BountiEntrySchema],
+    participation: [CreatorBountiParticipationSchema],
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

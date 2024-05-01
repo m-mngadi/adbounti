@@ -8,7 +8,7 @@ import { DatePickerWithRange } from "@/components/beta/DatePicker";
 import { confirmFormDetails } from "@/actions/confirmFormDetails";
 import { useDateRangePicker } from "@/components/beta/DatePicker";
 import { addDays, differenceInCalendarDays, format } from "date-fns";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 const CreateBountiPage = () => {
@@ -212,8 +212,8 @@ const StepTwo = (props: { formData: FormData; backAction: any }) => {
         </div>
         <div className="flex w-full justify-end gap-4">
           <button className="flex items-center justify-end gap-2 px-3 py-2 rounded-lg text-sm bg-gradient-to-r from-rose-500 to-orange-500 text-white hover:bg-gradient-to-r hover:from-rose-600 hover:to-orange-600">
-            Next
-            <IconChevronRight />
+            Settle Payment on Stripe
+            <IconExternalLink />
           </button>
         </div>
       </div>

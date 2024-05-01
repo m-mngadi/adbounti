@@ -30,6 +30,10 @@ export const BountiSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    status: {
+      type: String,
+      required: true,
+    },
     paymentSettled: {
       type: Boolean,
       default: false,

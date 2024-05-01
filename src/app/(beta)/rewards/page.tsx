@@ -37,7 +37,7 @@ const RewardsPage = () => {
           </div>
           <div className="flex flex-col">
             <Link
-              href="/settings/payment-method"
+              href=""
               className="flex items-center max-w-36 gap-2 px-3 py-3 justify-center rounded-lg text-sm bg-gradient-to-r from-rose-500 to-orange-500 text-white hover:bg-gradient-to-r hover:from-rose-600 hover:to-orange-600"
             >
               Update
