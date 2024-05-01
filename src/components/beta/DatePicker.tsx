@@ -1,4 +1,4 @@
-import { HTMLAttributes, useState } from "react";
+import { useState } from "react";
 import { addDays, format } from "date-fns";
 import { IconCalendar } from "@tabler/icons-react";
 import { DateRange } from "react-day-picker";
@@ -9,7 +9,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
 
 export const useDateRangePicker = () => {
   const [selectedDateRange, setSelectedDateRange] = useState<
